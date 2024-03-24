@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Raspberry Pi Live Video Feed</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .video-container {
+            margin: 10px;
+            max-width: 100%; /* Ensures video container doesn't exceed screen width */
+            overflow-x: auto; /* Allows horizontal scrolling on smaller screens */
+            white-space: nowrap; /* Prevents wrapping of elements */
+        }
+
+        .video-container img {
+            width: auto; /* Ensures the image doesn't exceed its container */
+            height: auto; /* Maintains aspect ratio */
+            max-width: 100%; /* Ensures the image doesn't exceed its container */
+            max-height: 100vh; /* Limits image height to viewport height */
+        }
+
+        h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Raspberry Pi Live Video Feed</h1>
+    <div class="video-container">
+        <img id="bg1" src="{{ url_for('video_feed') }}">
+        <img id="bg2" src="{{ url_for('video_feed') }}">
+    </div>
+</body>
+
+</html>
+
